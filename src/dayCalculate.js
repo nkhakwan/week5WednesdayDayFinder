@@ -1,9 +1,9 @@
 export class DayCalculate {
-        constructor(year,month,date,firstDayOfTheYear){
+        constructor(year,month,date){
           this.year = year;
           this.month = month;
           this.date = date;
-          this.firstDayOfTheYear = firstDayOfTheYear;
+          //this.firstDayOfTheYear = firstDayOfTheYear;
         }
     
   
@@ -39,7 +39,7 @@ export class DayCalculate {
     let offSet = 0;
     let day = "";
     for (var i=0; i<days.length; i=i+1){
-      if (this.firstDayOfTheYear === days[i]){
+      if (this.firstDayOfTheYearFinder() === i){   //firstDayOfTheYearFinder
         offSet = (i-1);
       }
     }
@@ -52,66 +52,16 @@ export class DayCalculate {
       }// end of if
     } // end of for loop
   } // end of function
+  firstDayOfTheYearFinder(){
+    var firstDayOf2020 = 3;
+    var futureFirstDayWithoutLeap = (this.year-2020) +firstDayOf2020;
+    var leapYearAddition = Math.floor((this.year - 2020)%4);
+    var futureFirstDayWithLeap= futureFirstDayWithoutLeap + leapYearAddition;
+    var futureFirstDayWithoutRevolvingHassel = futureFirstDayWithLeap %7;
+    return futureFirstDayWithoutRevolvingHassel;
+  }
 } // end of class
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*export function DayCalculate() {
-    this.numberOfDays,
-    this.day
-  }
-
-  
-  DayCalculate.prototype.numberOfDays = function(year,month,date) {
-    var totalDays = 0;
-    var months = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-      if  ((year%4) === 0 && (month >2)){
-        for (var i = 0; i < month; i=i+1){
-          totalDays += months[i];
-          console.log(totalDays);
-        }
-        totalDays = totalDays +1 + date;
-      } else {
-        for (var i = 0; i < month; i=i+1){
-          totalDays += months[i];
-          console.log(totalDays);
-        }
-        totalDays = totalDays + date;
-        console.log(totalDays);
-      }
-      console.log(totalDays);
-      this.numberOfDays = totalDays;
-    return totalDays;
-  }
-
-  DayCalculate.prototype.dayFinder = function(numberOfDays, firstDayOfTheYear){
-    var days = ["Sunday", "Monday", "Teusday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    var ourDay = numberOfDays%7;
-    var offSet = 0;
-    for (var i=0; i<days.length; i=i+1){
-      if (firstDayOfTheYear === days[i]){
-        offSet = (i-1);
-      }
-    }
-    console.log(ourDay);
-    for (var i = 0; i<days.length; i=i+1){
-      if (ourDay === i){
-        this.day= days[i+offSet];
-        console.log(this.day+"we are in the loop");
-      }
-    }
-  }*/
 
 
 

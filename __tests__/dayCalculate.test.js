@@ -4,7 +4,7 @@ describe('DayCalculate', () => {
   var dayCalculate;
 
   beforeEach(() => {
-     dayCalculate = new DayCalculate(2020,4,4,"Teusday");
+     dayCalculate = new DayCalculate(2021,6,7);
   });
 
   test('should test whether our number of days are correct', () => { 
