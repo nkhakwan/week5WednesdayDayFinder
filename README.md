@@ -6,7 +6,7 @@
 
 ## Description
 
-_This mind jogging coding Program takes three parameters from users or in our particular case from test we would be writing in jest and gives us back the day corresponding to the date, month and year parameters it had provided_
+_This mind jogging coding Program takes three parameters from users or in our particular case from test we would be writing in jest and gives us back the day corresponding to the date, month and year parameters it had been provided with_
 
 ## Setup/Installation Requirements
 
@@ -18,11 +18,11 @@ _This mind jogging coding Program takes three parameters from users or in our pa
 
 ## Known Bugs
 
-None so far 
+It only works for the future dates. This has been tested till 2064 to give correct day. 
 
 ## Support and contact details
 
-_Have a bug or an issue with this application contact Matt thru his email at lixingke06@gmail.com_
+_Have a bug or an issue with this application contact Matt or KhanSahab thru emails at lixingke06@gmail.com or post_khan@yahoo.com_ 
 
 ## Technologies Used
 
@@ -33,23 +33,18 @@ constructors
 prototype
 Creating and Saving Objects
 ES 6 classes
-
-* Test would provide year, month and date to our dayCalculate class in dayCalculate.js file in ./src directory.
-1 The class should be able to calculate the number of days in that particular year till to the date provided by the test. The number of days would vary by one day depending the year is divisiable by 4 or not.
-2 The class should be able to find the first day of that particular year. rounded to floor(Year inserted minus 2020) /4) Plus (year inserted minu 2020)%7
-3 Find the offset of the first day of the year from Monday.
-4 number of days calculated in  step 1 divided by 7 and the modulo is added with number of offset calculated in step 3 would give us our day when we again divide it by 7.  
+testing with jest
 
 
+### Specs Input thru __tests_/dayCalculate.test.js
+* We have six tests of three different types. In first two tests, we provide "year" "month and "date" and the test tests whether the code came up with right day. It tests if expected and recieved was really a Wednesday.
+* Next two tests test a function to see whether function calculates right number of days till the date we have provided to it. For instance November 15, 2025 has 315 days till that date in 2025. So the test tests that.
+* The last two tests test whether the code can find first day of any given year. Whether first day of 2064 be Sunday or Wednesday, can be determined by one of the functions. For instance it is being tested what would be the first day on 2021. And we found it is going to be Friday.
 
-
-### Specs Input
-| Spec | Input | result |
 | :-------------  | :-----------------------------------------------------| :----------------------------------------|
-| **Pizza Size**  | User Input:"choice of small medium large or family size" | Output: "displays the size selected" |
-| **topping One** | User Input: "choice of chicken, mutton, beef or none" | Output: "displays the topping selected"|
-| **topping two** | User Input: "choice of 'olives/artechoke', 'mushrooms/gardenSalad' or none | Output: "displays the selection" |
-| **Displays Calculated Cost** | User Input: "Click-Submit" | Output: "calculated cost is displayed" |
+| **Testing Day Finder Function... Calculate what day of the week a date is**  | User Input:"2064 4 17" | Output: "received and expected Thursday" |
+| **Testing firstDayOfTheYearFinder...What is the first day of the year of interest** | User Input: "2021 5 10" | Output: "5 (Friday)"|
+| **Testing numberOfDays Function.... Testing how many days in the year of interest are there till the date inputted by the user** | User Input: "2015 11 15"| Output: "319" |
 
 
 ### License
