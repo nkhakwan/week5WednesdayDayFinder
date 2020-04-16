@@ -12,6 +12,11 @@ describe('DayCalculate', () => {
     expect(dayCalculate.dayFinder()).toEqual("Teusday");
   });
 
+  test('should test whether our number of days are correct', () => { 
+    dayCalculate = new DayCalculate(2064,4,17);
+    expect(dayCalculate.dayFinder()).toEqual("Thursday");
+  });  
+
   test('should test what numerical day of the year a given date is', () => { 
     dayCalculate = new DayCalculate(2025,11,15);
     expect(dayCalculate.numberOfDays()).toEqual(319); //319
