@@ -4,11 +4,11 @@ describe('DayCalculate', () => {
   var dayCalculate;
 
   beforeEach(() => {
-     dayCalculate = new DayCalculate(2020,4,4,"Monday");
+     dayCalculate = new DayCalculate(2020,4,4,"Teusday");
   });
 
   test('should test whether our number of days are correct', () => { 
-    expect(dayCalculate.dayFinder).toEqual("Wednesday");
+    expect(dayCalculate.dayFinder()).toEqual("Wednesday");
   });
   
 }); // end of describe

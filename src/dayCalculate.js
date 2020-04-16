@@ -10,7 +10,7 @@ export class DayCalculate {
 
   //let numberOfDays = 0;
 
-
+    
   numberOfDays ()  {
     let totalDays = 0;
     let months = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
@@ -35,7 +35,7 @@ export class DayCalculate {
 
   dayFinder() {
     let days = ["Sunday", "Monday", "Teusday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    let ourDay = numberOfDays()%7;
+    let ourDay = this.numberOfDays()%7;
     let offSet = 0;
     let day = "";
     for (var i=0; i<days.length; i=i+1){
