@@ -4,15 +4,11 @@ describe('DayCalculate', () => {
   var dayCalculate;
 
   beforeEach(() => {
-     dayCalculate = new DayCalculate();
-    dayCalculate.numberOfDays(2020,4,4);
-    dayCalculate.dayFinder(95, "Sunday");
+     dayCalculate = new DayCalculate(2020,4,4,"Monday");
   });
 
   test('should test whether our number of days are correct', () => { 
-    expect(dayCalculate.day).toEqual("Wednesday");
+    expect(dayCalculate.dayFinder).toEqual("Wednesday");
   });
-  test('should test orderPrice', () => {
-    expect(dayCalculate.numberOfDays).toEqual(95);
-  });
+  
 }); // end of describe

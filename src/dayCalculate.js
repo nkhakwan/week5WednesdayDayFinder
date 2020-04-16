@@ -47,10 +47,12 @@ export class DayCalculate {
     for (var i = 0; i<days.length; i=i+1){
       if (ourDay === i){
         day= days[i+offSet];
+        return day;
         console.log(day+"we are in the loop");
-      }
-    }
-  }
+      }// end of if
+    } // end of for loop
+  } // end of function
+} // end of class
 
 
 
