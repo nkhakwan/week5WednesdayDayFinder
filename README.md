@@ -2,7 +2,7 @@
 
 #### _Epicodus Week 5 Wednesday and Thursday combined Project_
 
-#### By _**KhaanSahab**_ and _**Matt Stroud**_
+#### By _**KhanSahab**_ and _**Matt Stroud**_
 
 ## Description
 
