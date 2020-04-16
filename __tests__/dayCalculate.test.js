@@ -3,12 +3,23 @@ import { DayCalculate } from './../src/dayCalculate.js';
 describe('DayCalculate', () => {
   var dayCalculate;
 
-  beforeEach(() => {
-     dayCalculate = new DayCalculate(2025,11,11);
-  });
+  // beforeEach(() => {
+  //    dayCalculate = new DayCalculate(2025,11,11);
+  // });
 
   test('should test whether our number of days are correct', () => { 
-    expect(dayCalculate.dayFinder()).toEqual("Wednesday");
+    dayCalculate = new DayCalculate(2025,11,11);
+    expect(dayCalculate.dayFinder()).toEqual("Teusday");
+  });
+
+  test('should test what numerical day of the year a given date is', () => { 
+    dayCalculate = new DayCalculate(2025,11,15);
+    expect(dayCalculate.numberOfDays()).toEqual(319); //319
+  });
+
+  test('should test what the first day of the year is for a given date', () => { 
+    dayCalculate = new DayCalculate(2025,11,15);
+    expect(dayCalculate.firstDayOfTheYearFinder()).toEqual(3); //3
   });
   
 }); // end of describe
