@@ -17,7 +17,7 @@ export class DayCalculate {
       if  ((this.year%4) === 0 && (this.month >2)){
         for (var i = 0; i < this.month; i=i+1){
           totalDays += months[i];
-          console.log(totalDays);
+          //console.log(totalDays);
         }
         totalDays = totalDays +1 + this.date;
       } else {
@@ -26,7 +26,7 @@ export class DayCalculate {
           console.log(totalDays);
         }
         totalDays = totalDays + this.date;
-        console.log(totalDays);
+        //console.log(totalDays);
       }
       console.log(totalDays);
       //numberOfDays = totalDays;
@@ -43,21 +43,22 @@ export class DayCalculate {
         offSet = (i-1);
       }
     }
-    console.log(ourDay);
+    //console.log(ourDay);
     for (var i = 0; i<days.length; i=i+1){
       if (ourDay === i){
-        day= days[i+offSet];
+        day= days[(i+offSet)%7];
         return day;
-        console.log(day+"we are in the loop");
+        //console.log(day+"we are in the loop");
       }// end of if
     } // end of for loop
   } // end of function
   firstDayOfTheYearFinder(){
-    var firstDayOf2020 = 3;
-    var futureFirstDayWithoutLeap = (this.year-2020) +firstDayOf2020;
-    var leapYearAddition = Math.floor((this.year - 2020)%4);
+    var firstDayOf2017 = 0;
+    var futureFirstDayWithoutLeap = (this.year-2017) +firstDayOf2017;
+    var leapYearAddition = Math.floor((this.year - 2017)/4);
     var futureFirstDayWithLeap= futureFirstDayWithoutLeap + leapYearAddition;
     var futureFirstDayWithoutRevolvingHassel = futureFirstDayWithLeap %7;
+    console.log(futureFirstDayWithLeap + " " + futureFirstDayWithoutRevolvingHassel);
     return futureFirstDayWithoutRevolvingHassel;
   }
 } // end of class
